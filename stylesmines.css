@@ -42,14 +42,14 @@ p {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.box.revealed.mine {
-    background-color: #e74c3c;
+.box.revealed.mine { 
+    background-color: #b22c1e;
     color: #ecf0f1;
     cursor: default;
 }
 
-.box.revealed.bong {
-    background-color: #27ae60;
+.box.revealed.diamond {
+    background-color: #2cba67;
     color: #ecf0f1;
     cursor: default;
 }

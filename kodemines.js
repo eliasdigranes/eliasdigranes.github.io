@@ -2,27 +2,46 @@ const boxes = document.querySelectorAll('.box');
 const resultMessage = document.getElementById('result-message');
 const resetButton = document.getElementById('reset-btn');
 
-// Start game function
+// Start spillet
 function startGame() {
-    // skal gjøres: Legg til logikk for å velge tilfeldig mine eller riktig
-    boxes.forEach(box => {
-        box.classList.remove('revealed', 'mine', 'bong');
-        box.dataset.type = "hidden";
-        // Legge til eventlistener for klikk
+    // Tilfeldig velg en boks som skal være "mine"
+    const mineIndex = Math.floor(Math.random() * boxes.length);
+    boxes.forEach((box, index) => {
+        box.classList.remove('revealed', 'mine', 'diamond');
+        box.dataset.type = index === mineIndex ? 'mine' : 'diamond'; // Sett type som "mine" eller "diamond"
+        box.textContent = ''; // Fjern eventuell tidligere tekst
+        box.addEventListener('click', handleBoxClick, { once: true }); // Legg til klikkhåndterer
     });
+
+    // Skjul reset-knappen
+    resetButton.style.display = 'none';
+    resultMessage.textContent = ''; // Tøm resultatmeldingen
 }
 
-// Klikkhåndterer (ikke ferdig)
+// Klikkhåndterer for bokser
 function handleBoxClick(event) {
     const clickedBox = event.target;
-    // neste: Avslør innholdet til boksen og oppdater resultatmeldingen
-    console.log("Boks klikket!"); // Placeholder for testing
+    const type = clickedBox.dataset.type;
+
+    if (type === 'mine') {
+        clickedBox.classList.add('revealed', 'mine');
+        clickedBox.textContent = '💣'; // Placeholder for visning
+        resultMessage.textContent = 'Du traff desverre minen! 😔';
+    } else if (type === 'diamond') {
+        clickedBox.classList.add('revealed', 'diamond');
+        clickedBox.textContent = '💎'; // Placeholder for visning
+        resultMessage.textContent = 'Gratulerer! Du traff diamanten! 🎉';
+    }
+
+    // Skal gjøres: avslør den andre boksen automatisk, sånn at man ser resultatet
+    console.log("klikk fullført, men logikk for avsløring av andre boks mangler");
 }
+
+// Reset-knappen logikk (ikke ferdig)
+resetButton.addEventListener('click', () => {
+    console.log("Reset-knappen klikket! Start spillet på nytt...");
+    startGame();
+});
 
 // Start spillet når siden lastes
 startGame();
-
-// må gjøre: Legg til logikk for "Spill igjen"-knappen
-resetButton.addEventListener('click', () => {
-    console.log("Reset-knappen klikket!"); // Placeholder for testing
-});
