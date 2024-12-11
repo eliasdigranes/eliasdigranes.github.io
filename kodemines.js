@@ -1,47 +1,56 @@
 const boxes = document.querySelectorAll('.box');
 const resultMessage = document.getElementById('result-message');
 const resetButton = document.getElementById('reset-btn');
+const balanceContainer = document.getElementById('balance-container');
+const balanceElement = document.getElementById('balance');
+const betInput = document.getElementById('bet-amount');
+const placeBetButton = document.getElementById('place-bet-btn');
+
+let balance = 1000; // Startsaldo
+
+// Oppdaterer saldo-visning
+function updateBalanceDisplay() {
+    balanceElement.textContent = balance;
+}
 
 // Start spillet
 function startGame() {
-    // Velg tilfeldig en "mine" og resten som "diamond"
     const mineIndex = Math.floor(Math.random() * boxes.length);
     boxes.forEach((box, index) => {
         box.classList.remove('revealed', 'mine', 'diamond');
-        box.dataset.type = index === mineIndex ? 'mine' : 'diamond'; // Sett type som "mine" eller "diamond"
-        box.textContent = ''; // Tøm boksen
-        box.addEventListener('click', handleBoxClick, { once: true }); // Legg til klikkhåndterer
+        box.dataset.type = index === mineIndex ? 'mine' : 'diamond'; 
+        box.textContent = ''; 
+        box.addEventListener('click', handleBoxClick, { once: true });
     });
 
-    // Skjul reset-knappen
     resetButton.style.display = 'none';
-    resultMessage.textContent = ''; // Nullstill resultatmeldingen
+    resultMessage.textContent = '';
 }
 
-// Klikkhåndterer for bokser
+// Klikk på boks
 function handleBoxClick(event) {
     const clickedBox = event.target;
     const type = clickedBox.dataset.type;
+    const betAmount = parseInt(document.getElementById('game-container').dataset.betAmount, 10);
 
-    // Avslør boksen som ble klikket
     if (type === 'mine') {
         clickedBox.classList.add('revealed', 'mine');
         clickedBox.textContent = '💣';
-        resultMessage.textContent = 'Du traff dessverre minen! 😔';
-    } else if (type === 'diamond') {
+        resultMessage.textContent = `Du tapte! Innsatsen på ${betAmount} NOK er borte.`;
+    } else {
         clickedBox.classList.add('revealed', 'diamond');
         clickedBox.textContent = '💎';
-        resultMessage.textContent = 'Gratulerer! Du traff diamanten! 🎉';
+        const winnings = betAmount * 2;
+        balance += winnings;
+        resultMessage.textContent = `Gratulerer! Du vant ${winnings} NOK! 🎉`;
     }
 
-    // Avslør den andre boksen
+    updateBalanceDisplay();
     revealOtherBox(clickedBox);
-
-    // Vis reset-knappen
     resetButton.style.display = 'block';
 }
 
-// Funksjon for å avsløre den andre boksen
+// Avslør den andre boksen
 function revealOtherBox(clickedBox) {
     boxes.forEach(box => {
         if (box !== clickedBox && !box.classList.contains('revealed')) {
@@ -50,14 +59,32 @@ function revealOtherBox(clickedBox) {
             box.textContent = type === 'mine' ? '💣' : '💎';
         }
     });
-    console.log("Andre boks avslørt."); // Log for debugging
 }
 
-// Reset-knappen logikk
-resetButton.addEventListener('click', () => {
-    console.log("Reset-knappen klikket. Starter spillet på nytt...");
+// Plasser innsats
+placeBetButton.addEventListener('click', () => {
+    const betAmount = parseInt(betInput.value, 10);
+
+    if (isNaN(betAmount) || betAmount < 1) {
+        alert('Skriv inn et gyldig innsatsbeløp.');
+        return;
+    }
+
+    if (betAmount > balance) {
+        alert('Du har ikke nok saldo til denne innsatsen.');
+        return;
+    }
+
+    balance -= betAmount;
+    updateBalanceDisplay();
+    resultMessage.textContent = 'Innsatsen er plassert! Velg en boks.';
     startGame();
+    document.getElementById('game-container').dataset.betAmount = betAmount;
 });
 
-// Start spillet når siden lastes
+// Reset spill
+resetButton.addEventListener('click', startGame);
+
+// Start spill ved lasting
+updateBalanceDisplay();
 startGame();

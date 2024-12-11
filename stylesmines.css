@@ -1,3 +1,4 @@
+/* generelle stiler */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -20,6 +21,7 @@ p {
     margin-bottom: 20px;
 }
 
+/* spill-bokser */
 #game-container {
     display: flex;
     gap: 20px;
@@ -54,11 +56,13 @@ p {
     cursor: default;
 }
 
+/* resultat-melding */
 #result-message {
     margin-top: 20px;
     font-size: 1.2rem;
 }
 
+/* spill igjen-knapp */
 #reset-btn {
     padding: 10px 20px;
     background-color: #2980b9;
@@ -72,5 +76,31 @@ p {
 }
 
 #reset-btn:hover {
+    background-color: #3498db;
+}
+
+/* saldo og innsats */
+#balance-container {
+    margin-top: 20px;
+}
+
+#bet-amount {
+    width: 100px;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+#place-bet-btn {
+    padding: 10px 20px;
+    background-color: #2980b9;
+    color: #ecf0f1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+#place-bet-btn:hover {
     background-color: #3498db;
 }
