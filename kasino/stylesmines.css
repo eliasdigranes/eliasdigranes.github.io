@@ -1,0 +1,106 @@
+/* generelle stiler */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+/* spill-bokser */
+#game-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #34495e;
+    border: 2px solid #7f8c8d;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.box.revealed.mine { 
+    background-color: #b22c1e;
+    color: #ecf0f1;
+    cursor: default;
+}
+
+.box.revealed.diamond {
+    background-color: #12fa73;
+    color: #ecf0f1;
+    cursor: default;
+}
+
+/* resultat-melding */
+#result-message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+/* spill igjen-knapp */
+#reset-btn {
+    padding: 10px 20px;
+    background-color: #2980b9;
+    color: #ecf0f1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: none; 
+    margin-top: 20px;
+}
+
+#reset-btn:hover {
+    background-color: #3498db;
+}
+
+/* saldo og innsats */
+#balance-container {
+    margin-top: 20px;
+}
+
+#bet-amount {
+    width: 100px;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+#place-bet-btn {
+    padding: 10px 20px;
+    background-color: #2980b9;
+    color: #ecf0f1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+#place-bet-btn:hover {
+    background-color: #3498db;
+}
