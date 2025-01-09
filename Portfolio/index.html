@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elias Hollund Digranes Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Elias Hollund Digranes</h1>
+        <p>En utvikler og grafisk designer</p>
+    </header>
+    <main>
+        <section id="about">
+            <h2>Om Meg</h2>
+            <p>Hei! Jeg heter Elias, og jeg elsker koding og grafisk design. Jeg har erfaring med å lage spennende prosjekter på skolen innen felt og liker å utforske kreative løsninger.</p>
+        </section>
+        <section id="projects">
+            <h2>Mine Prosjekter</h2>
+            <button id="projects-button">Se Mine Prosjekter</button>
+            <div id="projects-list" style="display: none;">
+                <ul>
+                    <li><a href="../kasino/indexmines.html">Javascript-prosjekt: Mines</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Elias Hollund Digranes</p>
+    </footer>
+    <script>
+        document.getElementById('projects-button').addEventListener('click', () => {
+            const projectList = document.getElementById('projects-list');
+            projectList.style.display = projectList.style.display === 'none' ? 'block' : 'none';
+        });
+    </script>
+</body>
+</html>
