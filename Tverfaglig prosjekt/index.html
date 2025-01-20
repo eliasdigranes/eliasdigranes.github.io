@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avfallshåndtering og Resirkulering</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Avfallshåndtering i Norge</h1>
+        <nav>
+            <ul>
+                <li><a href="#intro">Om Resirkulering</a></li>
+                <li><a href="#ranking">Rangering av Fylker</a></li>
+                <li><a href="#spill">Sorter Boss</a></li>
+                <li><a href="#utfordringer">Utfordringer</a></li>
+                <li><a href="#teknologi">Innovasjon i Resirkulering</a></li>
+                <li><a href="#organisering">Organisering</a></li>
+                <li><a href="#kontakt">Kontakt Oss</a></li>
+                <li><a href="#quizzes">Test Kunnskap</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>Hva er Resirkulering?</h2>
+            <p>Resirkulering er prosessen der vi omgjør avfall til nye materialer eller produkter. Dette bidrar til å redusere behovet for å utvinne råmaterialer og minker avfallsmengdene på deponier.</p>
+            <p>I Norge er kommunene ansvarlige for organiseringen av avfallshåndtering, noe som sikrer et system der alle kan bidra til en mer bærekraftig fremtid. I tillegg støtter staten initiativer for bedre resirkulering gjennom ulike tilskudd og lovgivning.</p>
+            <img src="bilder/recycling.jpeg" alt="Resirkulering prosess" class="image-center">
+        </section>
+
+        <section id="ranking">
+            <h2>Rangering av Fylker</h2>
+            <p>Gjenvinningsraten varierer mellom de ulike fylkene. Her er en oversikt over de beste og dårligste fylkene i Norge:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fylke</th>
+                        <th>Gjenvinning (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Innlandet</td>
+                        <td>85%</td>
+                    </tr>
+                    <tr>
+                        <td>Vestfold og Telemark</td>
+                        <td>82%</td>
+                    </tr>
+                    <tr>
+                        <td>Trøndelag</td>
+                        <td>80%</td>
+                    </tr>
+                    <tr>
+                        <td>Vestland</td>
+                        <td>65%</td>
+                    </tr>
+                    <tr>
+                        <td>Troms og Finnmark</td>
+                        <td>60%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="spill">
+            <h2>Sorter Boss!</h2>
+            <p>Prøv deg på dette morsomme spillet der du skal sortere avfall i riktig kategori. Dra og slipp hvert element i rett boks!</p>
+            <div id="game-area">
+                <div id="trash-items">
+                    <div class="trash" draggable="true" data-type="plast">Plastflaske</div>
+                    <div class="trash" draggable="true" data-type="papir">Avis</div>
+                    <div class="trash" draggable="true" data-type="mat">Epleskrott</div>
+                    <div class="trash" draggable="true" data-type="elektronikk">Mobiltelefon</div>
+                    <div class="trash" draggable="true" data-type="glass">Syltetøyglass</div>
+                </div>
+                <div id="bins">
+                    <div class="bin" data-type="plast">Plast</div>
+                    <div class="bin" data-type="papir">Papir</div>
+                    <div class="bin" data-type="mat">Matavfall</div>
+                    <div class="bin" data-type="elektronikk">Elektronikk</div>
+                    <div class="bin" data-type="glass">Glass</div>
+                </div>
+            </div>
+            <p id="result">Dra avfall til riktig kategori for å begynne!</p>
+        </section>
+
+        <section id="utfordringer">
+            <h2>Utfordringer i Resirkulering</h2>
+            <ul>
+                <li>Plast havner ofte i restavfallet istedenfor riktig beholder.</li>
+                <li>Mangel på kunnskap om hva som kan resirkuleres.</li>
+                <li>Lang transport til resirkuleringsanlegg for avsidesliggende fylker.</li>
+                <li>Ulikt regelverk på tvers av kommuner og fylker.</li>
+            </ul>
+            <p>Forbedringstiltak som kan hjelpe inkluderer økt bevissthet, teknologiske innovasjoner og standardiserte regler. Det er viktig at alle innbyggere, fra barn til voksne, lærer hvordan de kan bidra til et grønnere samfunn.</p>
+            <img src="bilder/utfordringer.jpg" alt="Utfordringer i resirkulering" class="image-center">
+        </section>
+
+        <section id="teknologi">
+            <h2>Innovasjon i Resirkulering</h2>
+            <p>Teknologiske fremskritt har gjort det lettere å resirkulere mer effektivt. For eksempel har automatiserte sorteringsanlegg og smart teknologi som identifiserer avfall etter type blitt introdusert. Slike teknologier kan redusere menneskelige feil og øke gjenvinningsraten betydelig.</p>
+            <p>I tillegg utvikles nye materialer som er lettere å resirkulere, som bioplast, som kan være et alternativ til tradisjonell plast i fremtiden. Norge har gjort store fremskritt innen resirkulering, men det er store geografiske forskjeller. Tall fra Grønt Punkt Norge viser at noen regioner utmerker seg som spesielt gode på resirkulering, mens andre har et betydelig forbedringspotensial.
+            </p>
+        </section>
+
+        <section id="organisering">
+            <h2>Hvordan er avfallssortering organisert i Norge?</h2>
+            <p>Kommunene er ansvarlige for innsamling og behandling av husholdningsavfall, og de fleste har samarbeidsavtaler gjennom interkommunale renovasjonsselskaper. I tillegg til husholdningsavfall er det mange steder separate ordninger for næringsavfall. Dette sikrer at både privatpersoner og bedrifter kan bidra til økt materialgjenvinning.</p>
+            <p>Det er flere avfallsfraksjoner som skal sorteres i de fleste kommuner:</p>
+            <ul>
+                <li><strong>Restavfall:</strong> Avfall som ikke kan resirkuleres.</li>
+                <li><strong>Plastemballasje:</strong> Myk og hard plast.</li>
+                <li><strong>Papir og kartong:</strong> Alt fra aviser til melkekartonger.</li>
+                <li><strong>Glass og metall:</strong> Flasker, syltetøyglass og hermetikk.</li>
+                <li><strong>Matavfall:</strong> Organisk avfall som kan brukes til biogassproduksjon.</li>
+                <li><strong>Farlig avfall:</strong> Batterier, maling, kjemikalier.</li>
+                <li><strong>Elektronisk avfall:</strong> Elektriske apparater og elektronikk.</li>
+            </ul>
+            <p>
+                En viktig milepæl kom i 2023, da alle kommuner ble pålagt å sikre kildesortering av matavfall, hageavfall og plastavfall. Dette kravet er ment å øke materialgjenvinningen og redusere miljøbelastningen fra avfall.</p>
+        </section>
+
+        <section id="quizzes">
+            <h2>Test Kunnskap!</h2>
+            <p>Hvor mye kan du om resirkulering? Ta vår quiz og finn ut hvordan du står til på området!</p>
+            <form id="quiz-form">
+                <label for="question1">Hva kan ikke resirkuleres?</label>
+                <select id="question1" required>
+                    <option value="plast">Plast</option>
+                    <option value="matavfall">Matavfall</option>
+                    <option value="batterier">Batterier</option>
+                    <option value="glass">Glass</option>
+                </select>
+                <button type="submit">Sjekk Resultat</button>
+            </form>
+            <p id="quiz-result">Svar på quizzen for å finne ut mer!</p>
+        </section>
+
+        <section id="intervju-resultater">
+            <h2>Resultater fra Intervju</h2>
+            <p>Jeg intervjuet tre familiemedlemmer om deres resirkuleringsvaner. Her er hva jeg fant ut:</p>
+            <div id="familie-resultater">
+                <div class="familiemedlem">
+                    <h3>Pappa</h3>
+                    <p>Pappa er veldig flink til å resirkulere og vet alltid hvor ting skal kastes. Han sørger for at plast, papir, og glass havner i riktige beholdere.</p>
+                </div>
+                <div class="familiemedlem">
+                    <h3>Mamma</h3>
+                    <p>Mamma er like bevisst på resirkulering som pappa. Hun følger alltid råd og passer på at avfall blir sortert riktig.</p>
+                </div>
+                <div class="familiemedlem">
+                    <h3>Lillesøster</h3>
+                    <p>Lillesøster har litt å lære om resirkulering. Hun kaster ofte søppel rett i bosset i stedet for å bruke riktig beholder under vasken.</p>
+                </div>
+            </div>
+            <p>Dette viser at selv innenfor en familie kan vanene variere, og det er viktig å jobbe sammen for bedre resirkulering!</p>
+        </section>
+        
+
+        <section id="kontakt">
+            <h2>Kontakt Oss</h2>
+            <form action="#">
+                <label for="navn">Navn:</label>
+                <input type="text" id="navn" name="navn" required>
+
+                <label for="email">E-post:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="melding">Melding:</label>
+                <textarea id="melding" name="melding" rows="5" required></textarea>
+
+                <button type="submit">Send Inn</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Avfallshåndtering Norge. Alle rettigheter reservert.</p>
+        <nav>
+            <a href="#intro">Til toppen</a>
+        </nav>
+    </footer>
+
+    <script src="kode.js"></script>
+</body>
+</html>
