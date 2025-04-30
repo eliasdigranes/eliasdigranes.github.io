@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>Kortspill – Kasino</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🎴 Trekk et kort</h1>
+  <div class="balance" id="balance">Balanse: 100 kr</div>
+
+  <div class="game-box">
+    <label for="bet">Sats beløp:</label><br>
+    <input type="number" id="bet" min="1" placeholder="F.eks. 10"><br>
+    <button onclick="drawCard()">Trekk kort</button>
+
+    <div id="card-drawn"></div>
+    <div id="message"></div>
+  </div>
+
+  <script>
+    let balance = 100;
+
+    function drawCard() {
+      const bet = parseInt(document.getElementById("bet").value);
+      const card = Math.floor(Math.random() * 13) + 1;
+      const message = document.getElementById("message");
+      const balanceEl = document.getElementById("balance");
+      const cardDrawn = document.getElementById("card-drawn");
+
+      if (isNaN(bet) || bet <= 0) {
+        message.textContent = "Ugyldig innsats.";
+        return;
+      }
+
+      if (bet > balance) {
+        message.textContent = "Ikke nok penger!";
+        return;
+      }
+
+      cardDrawn.textContent = `Du trakk kortet: ${card}`;
+
+      if (card > 7) {
+        balance += bet;
+        message.textContent = `🎉 Du vant ${bet} kr!`;
+      } else {
+        balance -= bet;
+        message.textContent = `😢 Du tapte ${bet} kr.`;
+      }
+
+      balanceEl.textContent = `Balanse: ${balance} kr`;
+
+      if (balance <= 0) {
+        message.textContent = "Du er blakk! Spill over.";
+      }
+
+      document.getElementById("bet").value = "";
+    }
+  </script>
+</body>
+</html>

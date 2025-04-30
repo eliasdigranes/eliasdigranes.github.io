@@ -1,0 +1,140 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+  }
+  
+  header {
+    background-color: #005f8d; /* Dark blue */
+    padding: 10px 20px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  header nav ul {
+    list-style: none;
+  }
+  
+  header nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  header nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  main {
+    padding: 30px;
+  }
+  
+  .dashboard-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .dashboard-container h1 {
+    color: #005f8d; /* Blue title */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .post-creation {
+    margin-bottom: 40px;
+  }
+  
+  .post-creation h2 {
+    color: #005f8d;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  
+  .post-creation form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .post-creation form label {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  .post-creation form input, 
+  .post-creation form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+  
+  .post-creation form button {
+    padding: 12px 20px;
+    background-color: #005f8d; /* Button blue */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .post-creation form button:hover {
+    background-color: #00466b; /* Darker blue on hover */
+  }
+  
+  .posts-list h2 {
+    font-size: 1.8em;
+    color: #005f8d;
+    margin-bottom: 20px;
+  }
+  
+  .posts-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .posts-list ul li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .posts-list ul li h3 {
+    color: #005f8d;
+    font-size: 1.6em;
+  }
+  
+  .posts-list ul li p {
+    font-size: 1em;
+    color: #555;
+  }
+  
+  footer {
+    background-color: #005f8d;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+  }
+  

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elias Digranes - Portfolio</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">ED</div>
+            <nav>
+                <ul>
+                    <li><a href="#projects">Prosjekter</a></li>
+                    <li><a href="#about">Om meg</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1>Hei, jeg er <span class="highlight">Elias Digranes</span></h1>
+                <p>Student og fremtidig utvikler</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn primary">Mine prosjekter</a>
+                    <a href="#contact" class="btn secondary">Kontakt meg</a>
+                </div>
+            </section>
+
+            <section id="projects" class="projects">
+                <h2>Mine prosjekter</h2>
+                <div class="project-grid">
+                    <div class="project-card" onclick="location.href='Projects/project1/index.html'">
+                        <div class="project-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Trekk kort!</h3>
+                        <p>Et av mine prosjekt er et Kasino spill. Spillet kan du teste her.</p>
+                    </div>
+                    <div class="project-card" onclick="location.href='Projects/project2/index.html'">
+                        <div class="project-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Prosjekt 2</h3>
+                        <p>Mitt andre prosjekt jeg deler er dette her tictactoe spillet</p>
+                    </div>                    
+                    <div class="project-card" onclick="window.open('http://localhost:3000', '_blank')">
+                        <div class="project-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Prosjekt 3</h3>
+                        <p>Database prosjekt (lokalt lagret)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="about">
+                <h2>Litt om meg</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Heisann! Jeg heter Elias Digranes og er en student som jobber med ulike skoleprosjekter. Denne portfolioen er en del av et av mine prosjekter.</p>
+                        <p>Jeg interesserer meg for webutvikling, bilder og design generelt.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="Bilder/Photo on 10-04-2025 at 08.44.jpg" alt="Profilbilde av Elias Digranes" class="profile-img">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Twinery story section -->
+            <section id="twine-story" style="display: none; margin-top: 2rem;">
+                <h2>Interaktiv historie</h2>
+                <iframe src="Projects/Twinery/Ritualen (4).html" width="100%" height="600px" style="border: none;"></iframe>
+            </section>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <button onclick="toggleStory()" class="btn primary" id="toggleStoryBtn">Vis interaktiv historie</button>
+            </div>
+        </main>
+
+        <footer id="contact">
+            <h2>Kontakt</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> eliasdigraness@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +47 48441489</p>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="copyright">&copy; 2025 Elias Digranes.</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleStory() {
+            const storySection = document.getElementById('twine-story');
+            const button = document.getElementById('toggleStoryBtn');
+
+            if (storySection.style.display === 'none') {
+                storySection.style.display = 'block';
+                button.textContent = 'Skjul interaktiv historie';
+                window.scrollTo({
+                    top: storySection.offsetTop,
+                    behavior: 'smooth'
+                });
+            } else {
+                storySection.style.display = 'none';
+                button.textContent = 'Vis interaktiv historie';
+            }
+        }
+    </script>
+</body>
+</html>

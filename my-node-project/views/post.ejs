@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= post.title %></title>
+  <link rel="stylesheet" type="text/css" href="/css/post.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <% if (user) { %>
+          <li><a href="/dashboard">Dashboard</a></li>
+          <li><a href="/logout">Logout</a></li>
+        <% } else { %>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Register</a></li>
+        <% } %>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Post Section -->
+  <main>
+    <div class="post-container">
+      <h1><%= post.title %></h1>
+      <p><%= post.content %></p>
+    </div>
+
+    <!-- Comment Section -->
+    <div class="comment-section">
+      <h2>Comments</h2>
+      
+      <% if (user) { %>
+        <!-- Comment Form -->
+        <div class="comment-form">
+          <form action="/posts/<%= post.id %>/comments" method="POST">
+            <label for="content">Add a comment:</label>
+            <textarea id="content" name="content" placeholder="Write your comment here..." required></textarea>
+            <button type="submit">Post Comment</button>
+          </form>
+        </div>
+      <% } else { %>
+        <p><a href="/login">Login</a> to comment on this post.</p>
+      <% } %>
+
+      <!-- Display Comments -->
+      <div class="comments-list">
+        <ul>
+          <% comments.forEach(comment => { %>
+            <li>
+              <h3><%= comment.username %> says:</h3>
+              <p><%= comment.content %></p>
+            </li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome To Your Project!</h1>
+    <% if (!user) { %>
+      <p><a href="/login">Login</a> or <a href="/register">Register</a></p>
+    <% } else { %>
+      <p>Logged in as <%= user.username %>. <a href="/dashboard">Go to Dashboard</a></p>
+      <a href="/logout">Logout</a>
+    <% } %>
+  </div>
+</body>
+</html>
